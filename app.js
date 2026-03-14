@@ -22,11 +22,6 @@ server.listen(port, () => {
   console.log("listening on: "+port);
 });
 
-//// REMOVE IF YOU PUT ON RENDER //////
-//open in browser: dev environment only!
-await open(`http://localhost:${port}`);//opens in your default browser
-//// REMOVE IF YOU PUT ON RENDER //////
-
 // Callback function for when our P5.JS sketch connects 
 io.on("connection", (socket) => {
   socket.on("drawing", (data) => {
@@ -34,31 +29,3 @@ io.on("connection", (socket) => {
     console.log(data);
 });
 });
-
-
-
-// const express = require('express');
-// const http = require('http');
-// const WebSocket = require('ws');
-
-// const app = express();
-// const server = http.createServer(app);
-// const wss = new WebSocket.Server({ server });
-
-// wss.on('connection', (ws) => {
-//   console.log('Client connected');
-
-//   ws.on('message', (message) => {
-//     console.log('Received:', message.toString());
-//   });
-
-//   ws.send('Hello from server!');
-// });
-
-// app.get('/', (req, res) => {
-//   res.send('WebSocket server running');
-// });
-
-// server.listen(3000, () => {
-//   console.log('Server running on http://localhost:3000');
-// });
