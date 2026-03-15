@@ -4,11 +4,6 @@ import express from "express";
 import http from "http";
 import { Server } from "socket.io";
 
-
-//// REMOVE IF YOU PUT ON RENDER //////
-import open, {openApp, apps} from 'open';//only needed for a simple development tool remove if hosting online see above
-//// REMOVE IF YOU PUT ON RENDER //////
-
 const app = express();
 const server = http.createServer(app);//socket.io needs an http server
 const io = new Server(server);
